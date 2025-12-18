@@ -1,4 +1,3 @@
-
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from prediction_service import predict_future, fetch_data
@@ -10,6 +9,7 @@ app = FastAPI()
 origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "https://registrations.esnporto.org",  # Add production domain
 ]
 
 app.add_middleware(
