@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+pandas
+numpy
+scikit-learn
+xgboost
+lightgbm
+optuna
+matplotlib
+seaborn
+statsmodels
+python-multipart
+requests
+joblib

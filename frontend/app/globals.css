@@ -1,0 +1,202 @@
+:root {
+  /* ESN Brand Colors */
+  --esn-cyan: #00AEFF;
+  --esn-magenta: #EC008C;
+  --esn-green: #7AC143;
+  --esn-dark-blue: #2E3192;
+
+  /* Scholarship Manager Palette */
+  --bg-primary: #f8fafc;    /* Slate 50 */
+  --bg-card: #ffffff;
+  --text-primary: #1e293b;  /* Slate 800 */
+  --text-secondary: #64748b;/* Slate 500 */
+  --border-color: #f1f5f9;  /* Slate 100 - very soft */
+  
+  --nav-height: 72px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  padding-top: var(--nav-height);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Layout Containers --- */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* --- Refined Navbar (Scholarship Manager Style) --- */
+.nav-container {
+  background: white;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+}
+
+.nav-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.nav-edition-badge {
+  background: #f1f5f9;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: #64748b;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* --- Card Styles --- */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+/* --- Typography --- */
+h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+/* --- Table Styles --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* --- Status Badges --- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.badge-normal {
+  background-color: #f0fdf4;
+  color: #166534;
+  border-color: #dcfce7;
+}
+
+.badge-peak {
+  background-color: #fdf2f8;
+  color: #9d174d;
+  border-color: #fce7f3;
+}
+
+.badge-low {
+  background-color: #f0f9ff;
+  color: #075985;
+  border-color: #e0f2fe;
+}
+
+/* --- Utility Classes --- */
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: 0.5rem; }
+.gap-4 { gap: 1rem; }
+
+/* Fix for the exploded logo */
+.nav-brand img {
+    max-height: 40px; /* Forces the image to stay small */
+    width: auto;
+    display: block;
+}
+
+/* Ensure the navbar doesn't have a massive z-index issue */
+.nav-container {
+    background: white;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Keeps it above page content */
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Add a bit of spacing to the main content so it doesn't touch the nav */
+main {
+    margin-top: 1rem;
+}
