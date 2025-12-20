@@ -10,14 +10,14 @@ export default function Navbar() {
         <nav className="nav-container">
             <div className="nav-content">
                 {/* Left Side */}
-                <div className="nav-brand">
+                <Link href="/" className="nav-brand">
                     <img 
                         src="/logo.png" 
                         alt="ESN Porto" 
                         style={{ height: '40px', width: 'auto' }}
                     />
                     <div className="nav-title">Registrations Forecast</div>
-                </div>
+                </Link>
 
                 {/* Right Side - Navigation Links */}
                 <div className="nav-links">

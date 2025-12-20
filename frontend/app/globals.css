@@ -69,6 +69,13 @@ body {
   display: flex;
   align-items: center;
   gap: 1.5rem; /* Increased spacing between logo and text */
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.nav-brand:hover {
+  opacity: 0.8;
 }
 
 .nav-title {
