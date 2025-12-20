@@ -203,15 +203,13 @@ def predict_future(weeks_to_predict=8):
         
         # Store prediction in dataframe so next iteration sees it as history
         full_df.at[current_idx, 'registrations'] = y_pred
+        sigma = joblib.load(DATA_DIR / 'model_sigma.pkl')
         
         predictions.append({
             'week_ending': full_df.at[current_idx, 'week_ending'].isoformat(),
             'prediction': y_pred,
-            # Placeholder confidence interval (e.g. +/- 20% or based on RMSE from training)
-            # XGBoost doesn't give intervals natively without Quantile regression.
-            # We'll approximate using a fixed std dev or just a heuristic for now.
-            'confidence_lower': max(0, int(y_pred * 0.8)),
-            'confidence_upper': int(y_pred * 1.2)
+            'confidence_lower': max(0, int(y_pred - 1.96 * sigma)),
+            'confidence_upper': int(y_pred + 1.96 * sigma)
         })
         
     result = {

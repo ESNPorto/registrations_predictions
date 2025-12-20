@@ -68,6 +68,7 @@ body {
 .nav-brand {
   display: flex;
   align-items: center;
+  gap: 1.5rem; /* Increased spacing between logo and text */
 }
 
 .nav-title {
@@ -87,6 +88,38 @@ body {
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+/* --- Navigation Links --- */
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+}
+
+.nav-link:active {
+  transform: scale(0.98);
+}
+
+.nav-link-active {
+  color: var(--text-primary);
+  background-color: #e2e8f0; /* Slightly darker than hover state */
+  font-weight: 600;
 }
 
 /* --- Card Styles --- */

@@ -1,20 +1,38 @@
 "use client";
 
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
 export default function Navbar() {
+    const pathname = usePathname();
+    
     return (
         <nav className="nav-container">
             <div className="nav-content">
                 {/* Left Side */}
                 <div className="nav-brand">
-                    <div className="flex items-center" style={{ height: '40px' }}>
-                        <img
-                            src="/logo.png"
-                            alt="ESN Porto"
-                            className="h-full w-auto object-contain"
-                        />
-                    </div>
-                    <div className="h-6 w-[1px] bg-slate-200" style={{ margin: '0 10px' }}></div>
-                    <h1 className="nav-title">Registrations Forecast</h1>
+                    <img 
+                        src="/logo.png" 
+                        alt="ESN Porto" 
+                        style={{ height: '40px', width: 'auto' }}
+                    />
+                    <div className="nav-title">Registrations Forecast</div>
+                </div>
+
+                {/* Right Side - Navigation Links */}
+                <div className="nav-links">
+                    <Link 
+                        href="/" 
+                        className={`nav-link ${pathname === '/' ? 'nav-link-active' : ''}`}
+                    >
+                        Dashboard
+                    </Link>
+                    <Link 
+                        href="/notebook" 
+                        className={`nav-link ${pathname === '/notebook' ? 'nav-link-active' : ''}`}
+                    >
+                        View Notebook
+                    </Link>
                 </div>
             </div>
         </nav>

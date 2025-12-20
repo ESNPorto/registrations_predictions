@@ -102,6 +102,12 @@ def train():
     )
     
     model.fit(X, y)
+
+    predictions = model.predict(X)
+    residuals = y - predictions
+    sigma = np.std(residuals)
+    
+    joblib.dump(sigma, MODEL_PATH.parent / 'model_sigma.pkl')
     
     print("Saving model to", MODEL_PATH)
     joblib.dump(model, MODEL_PATH)
